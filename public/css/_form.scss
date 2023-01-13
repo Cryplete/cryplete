@@ -1,0 +1,58 @@
+.actionForm {
+    padding: 20px 25px;
+    background: $white;
+    color: $black;
+    .top, main, .otpForm {
+        display: flex;
+        flex-direction: column;
+    }
+    .top {
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid $DarkGrayishViolet;
+        img {height: 8rem;}
+        .message {display: flex; align-items: center; i {font-size: 2rem;}}
+    }
+    main, .main {
+        height: 70vw;
+        overflow-y: auto;
+        .input {margin: 10px 0px;}
+        .check {
+            display: flex;
+            align-items: center;
+            p {margin: 0px;}
+        }
+        label {color: $black;}
+        #password, #email {margin: 10px 0px;}
+        input {
+            width: 100%;
+            color: $black;
+            padding: 15px;
+            border: 1px solid $black;
+            background: transparent;
+            transition: all 300ms ease-in-out;
+        }
+        input button {
+            outline: 0px;
+            font-family: 'Lato', sans-serif;
+        }
+        button {
+            cursor: pointer;
+            align-self: center;
+            text-decoration: none;
+            font-weight: 800;
+            border: 0px;
+            color: $white;
+            background: $mainGreen;
+            padding: 15px 20px;
+            border-radius: 7px;
+            margin-top: 10px;
+        }
+        h5, .forgot {align-self: center;}
+        h5 a, .forgot, .resend {text-decoration: none; color: $mainGreen;}
+        .forgot {
+            margin: 20px 0px;
+        }
+        .resend {background: transparent; border: 0px; outline: 0px; font-weight: 800;}
+    }
+}

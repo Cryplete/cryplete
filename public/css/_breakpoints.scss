@@ -1,0 +1,91 @@
+//tablet
+@media(max-width: 900px) {
+    .nav {
+        &_links, .actions {
+            display: none;
+        }
+        .hamburger {
+            display: block;
+        }
+    }
+    .landing {
+        &_top {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            .actions .login {display: none;}
+            img {width: 60%;}
+        }
+    }
+    .dashboard .more .top, .dashboard .more .more-tab {width: 100%;}
+    footer main {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .kyc {
+        .options {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+}
+
+//smaller tabs
+@media(max-width: 660px) {
+    .actionForm {height: 100vh;}
+    .landing .landing_mid section, .landing .landing_more section, .about .about_mid section, .about .about_end section {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .landing_detail section, .dashboard .stats {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .cards {font-size: x-small;}
+
+    .about {
+        &_begining  {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .userAdmin {li {width: 80vw;}}
+
+    .payments {img {width: 60%;}}
+    
+}
+
+//phone 
+@media(max-width: 520px) {
+    .landing {
+        &_top img {width: 100%;}
+    }
+    .user {
+        width: 100vw;
+        font-size: small;
+        .detail {overflow-x: scroll;}
+    }
+    .kyc {
+        section {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 30px;
+        }
+    }
+}
+
+//smaller phones
+@media(max-width: 350px) {
+    .dashboard .stats {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+    .dashboard .more .top input, .dashboard .more-tab .texts {
+        width: 80%;
+        font-size: small;
+    }
+    .dashboard .more .top a, .dashboard .more-tab .svg {width: 20%;}
+}

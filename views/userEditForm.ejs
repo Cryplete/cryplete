@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crypelete, your pathway to success. A public trading company that boldly gains the trust of investors from around the world! Our professional and customer-oriented team is ready to make you an amazing offer of cryptocurrency investments">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Crypelete || Doorway To Success</title>
+</head>
+<body>
+    <form action="/edit-user/<%=user._id%>" class="actionForm" method="post">
+        <div class="top">
+            <img src="../images/logo.png" alt="logo">
+            <div class="message">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <p><%=message%></p>
+            </div>
+        </div>
+        <main>
+            <div class="input">
+                <label for="FName">First Name</label>
+                <input type="hidden" name="id" value="<%=user._id%>">
+                <input type="text" name="FName" id="FName" placeholder="First Name" value="<%=user.firstName%>" required>
+            </div>
+            <div class="input">
+                <label for="LName">Last Name</label>
+                <input type="text" name="LName" id="LName" placeholder="Last Name" value="<%=user.lastName%>" required>
+            </div>
+            <div class="input">
+                <label for="userName">User Name</label>
+                <input type="text" name="userName" id="userName" placeholder="User Name" value="<%=user.userName%>" required>
+            </div>
+            <div class="input">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" value="<%=user.email%>" required>
+            </div>
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" placeholder="Password" value="<%=user.password%>" required>
+            </div>
+            <div class="input">
+                <label for="completed">Completed Transactions</label>
+                <input type="number" name="completed" id="completed" placeholder="Completed Transactions" value="<%=user.completed%>" required>
+            </div>
+            <div class="input">
+                <label for="failed">Failed Transactions</label>
+                <input type="number" name="failed" id="failed" placeholder="Failed Transactions" value="<%=user.failed%>" required>
+            </div>
+            <div class="input">
+                <label for="invested">Total Amount Invested</label>
+                <input type="number" name="invested" id="invested" placeholder="Total Amount Invested" value="<%=user.invested%>" required>
+            </div>
+            <div class="input">
+                <label for="profit">Total Profit Earned</label>
+                <input type="number" name="profit" id="profit" placeholder="Total Profit Earned" value="<%=user.profit%>" required>
+            </div>
+            <div class="input">
+                <label for="withdrawal">Total Withdrawals Made</label>
+                <input type="number" name="withdrawal" id="withdrawald" placeholder="Total Withdrawals" value="<%=user.withdrawal%>" required>
+            </div>
+            <div class="input">
+                <label for="withdrawal">Unsettled Balance</label>
+                <input type="number" name="unsettled" id="withdrawald" placeholder="Unsettled Balance" value="<%=user.unsettledBalance%>" required>
+            </div>
+            <div class="input">
+                <label for="referalBonus">Referral Bonus</label>
+                <input type="number" name="referalBonus" id="referalBonus" placeholder="Referral Bonus" value="<%=user.referalBonus%>" required>
+            </div>
+            <div class="input" >
+                <label for="suspend">Suspend Account:</label>
+                <% if(!user.verified) { %>
+                    <input type="checkbox" name="suspend" id="check" checked style="width: 4%;">
+                <% } else { %>
+                    <input type="checkbox" name="suspend" id="check" style="width: 4%;">
+                <% } %>
+            </div>
+
+            <div class="input" >
+                <label for="kycVerified">KYC Verified?:</label>
+                <% if(user.kycVerified) { %>
+                    <input type="checkbox" name="kycVerified" id="check" checked style="width: 4%;">
+                <% } else { %>
+                    <input type="checkbox" name="kycVerified" id="check" style="width: 4%;">
+                <% } %>
+            </div>
+            <button type="submit">Submit Changes</button>
+        </main>
+    </form>
+</body>
+</html>

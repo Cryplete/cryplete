@@ -1,0 +1,48 @@
+.contacts {
+    form, .outro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        padding: 10px 15px;
+        input, textarea {
+            margin: 10px 0px;
+            width: 100%;
+            color: #fff;
+            padding: 15px;
+            border: 1px solid #fb9120;
+            background: transparent;
+        }
+        input, textarea, button {
+            outline: 0px;
+            font-family: 'Lato', sans-serif;
+        }
+    }
+    button, .outro a {
+        text-decoration: none;
+        font-weight: 800;
+        border: 0px;
+        color: $white;
+        background: $mainGreen;
+        padding: 15px 20px;
+        border-radius: 7px;
+        margin-top: 10px;
+    }
+    &_more {
+        h5 {color: $mainGreen}
+        p {color: $DarkGrayishViolet;}
+        a {
+            text-decoration: none;
+            color: $white;
+            display: flex;
+            h4 {margin: 0px;}
+            i {
+                color: $mainGreen;
+                margin-right: 20px;
+                font-size: x-large;
+            }
+            p {color: $DarkGrayishViolet;}
+        }
+    }
+}

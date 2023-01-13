@@ -1,0 +1,25 @@
+footer {
+    padding: 30px 25px;
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        border-bottom: 1px solid $DarkGrayishViolet;
+        padding-bottom: 10px;
+        .head {
+            img {height: 15rem;}
+            p {color: $DarkGrayishViolet;}
+        }
+        .menu {
+            h4, i {color: $mainGreen;}
+            a, .location {
+                display: flex;
+                color: $DarkGrayishViolet;
+                margin-bottom: 20px;
+                text-decoration: none;
+                i {margin-right: 10px;}
+            }
+        }
+    }
+    .copy {text-align: center; color: $DarkGrayishViolet;}
+}

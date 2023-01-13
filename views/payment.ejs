@@ -1,0 +1,20 @@
+<%-include('partials/dashNav')-%>
+<div class="payments">
+    <div class="payments-top">
+        <h2>Confirmed: Please Deposit Into This BTC Wallet</h2>
+        <p>Your Balance Would Be Updated After The Payment Is Confirmed From Our Wallet Server</p>
+    </div>
+    <div class="payments-body">
+        <p><b><%=network%> Wallet:</b></p>
+        <div class="input">
+            <input type="text" name="referalLink" value="<%=address%>" readonly id="referalLink">
+                <a href="#" id="copyReferal">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                </a>
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="/dashboard/<%=userDetails._id%>">Close</a>
+    </div>
+</div>
+<%-include('partials/dashFooter')-%>

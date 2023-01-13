@@ -1,0 +1,41 @@
+<%-include('partials/dashNav')-%>
+<form method="post" action="/kyc/<%=userDetails._id%>" enctype="multipart/form-data" class="kyc">
+    <div class="intro">
+        <h3>KYC VERIFICATION</h3>
+        <p>To complete your registration, please verify your account with a government issued certificate</p>
+    </div>
+
+    <main>
+        <h4>Verify with:</h4>
+    <div class="options">
+        <div class="input">
+            <label for="votersCard">Voter's Card</label>
+            <input type="radio" name="certificate" id="votersCard" value="votersCard" required>
+        </div>
+        <div class="input">
+            <label for="idCard">National Identity Card</label>
+            <input type="radio" name="certificate" id="idCard" value="idCard" required>
+        </div>
+        <div class="input">
+            <label for="driversLicense">Driver's License</label>
+            <input type="radio" name="certificate" id="driversLicense" value="driversLicense" required>
+        </div>
+    </div>
+
+    <section>
+        <div data-aos="fade-up" data-aos-duration="1500" class="detail">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <h3>Front Page</h3>
+            <p>Front Page Of Government Issued Certificate <input type="file" name="frontPage" id="frontPage" accept=".png, .jpg, .jpeg" required></p>
+        </div>
+
+        <!-- <div data-aos="fade-up" data-aos-duration="1500" class="detail">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <h3>Back Page</h3>
+            <p>Back Page Of Government Issued Certificate <input type="file" name="backPage" id="backPage" accept=".png, .jpg, .jpeg" required></p>
+        </div> -->
+    </section>
+</main>
+    <button type="submit">Submit</button>
+</form>
+<%-include('partials/dashFooter')-%>

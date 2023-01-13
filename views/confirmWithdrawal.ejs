@@ -1,0 +1,25 @@
+<%-include('partials/dashNav')-%>
+<form method="post" action="/withdraw/confirm/<%=amount%>/<%=userDetails._id%>/<%=network%>" class="save withdrawConfirm">
+    <div class="save-top">
+        <h3>Confirm Withdrawal:</h3>
+    </div>
+    <div class="save-body">
+        <div class="detail">
+            <h4>Amount:</h4>
+            <h4>$<%=amount%></h4>
+        </div>
+        <div class="detail">
+            <h4>Network:</h4>
+            <h4><%=network%></h4>
+        </div>
+        <label for="address"><b><%=network%></b> Wallet Address:</label>
+        <div class="input">
+            <input type="text" name="wallet" id="address" placeholder="Wallet Address*" required>
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="/withdraw/<%=userDetails._id%>">Cancel</a>
+        <button type="submit">Confirm</button>
+    </div>
+</form>
+<%-include('partials/dashFooter')-%>

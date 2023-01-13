@@ -1,0 +1,49 @@
+<%-include('partials/dashNav')-%>
+<div class="userAdmin">
+    <% if(activePlans.length == 0) { %>
+        <div class="user">
+            <h2>😥 No Active Plans Yet. Click <a href="/deposit/<%=userDetails%>">Here</a> To Make A Deposit And Begin A Plan</h2>
+    <% } else { %>
+        <div class="user">
+            <h2 style="text-align: center;">
+                All Active Plans</h2>
+                <ol>
+                    <% activePlans.forEach(active => { %>
+                        <li>
+                            <a href="/active-plans/<%=userDetails._id%>/<%=active._id%>" class="userLink">
+                                <p style="margin-right: 4rem;"><%=active.plan%></p>
+                                <p><%=active.startDate%></p>
+                            </a>
+                        </li>
+                    <% }); %>
+                </ol>
+    <% } %>
+    <div class="detail popUp">
+        <h3>Logout</h3>
+        <p>Are you want to logout?</p>
+        <div class="buttons">
+            <a href="#" id="cancel">Cancel</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.user');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>
+

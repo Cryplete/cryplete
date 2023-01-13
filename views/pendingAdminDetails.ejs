@@ -1,0 +1,41 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(pending.length == 0) { %>
+        <h2>🌚🌚 Nothing To See Here... <a href="/">Head back home</a></h2>
+    <% } else { %>
+        <div class="user">
+            <h2>Withdrawal Details:</h2>
+            <div class="detail"><p>Amount: </p><h3>$<%=pending.amount%></h3></div>
+            <div class="detail"><p>Deposit Wallet: </p><h3><%=pending.wallet%></h3></div>
+            <div class="detail"><p>Deposit Network: </p><h3><%=pending.network%></h3></div>
+            <div class="detail"><p>Requested By: </p> <a href='/admin/<%=user._id%>'><%=user.email%></a></div>
+            <div class="detail"><p>Status </p><h3><%=pending.status%></h3></div>
+            <div class="detail buttons">
+                <a href="/edit-withdrawal/<%=pending._id%>"><i class="fa fa-pencil-square-o"></i></a>
+                <a href="#" id="delete"><i class="fa fa-trash"></i></a>
+            </div>
+            <form action="/delete-pending" method="post" class="detail popUp">
+                <input type="hidden" name="id" value="<%=pending._id%>">
+                <h3>Delete <%=user.email%>'s Withrawal?</h3>
+                <p>Are you sure about this?</p>
+                <div class="buttons">
+                    <a href="#" id="cancel">Cancel</a>
+                    <button type="submit">Yes</button>
+                </div>
+            </form>
+        </div>
+    <% } %>
+</div>
+<script>
+    const deleteBtn = document.querySelector('#delete');
+    const cancelBtn = document.querySelector('#cancel');
+    const user = document.querySelector('.user');
+    deleteBtn.addEventListener('click', ()=> {
+        user.classList.add('pop');
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        user.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>

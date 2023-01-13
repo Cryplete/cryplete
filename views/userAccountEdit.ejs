@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crypelete, your pathway to success. A public trading company that boldly gains the trust of investors from around the world! Our professional and customer-oriented team is ready to make you an amazing offer of cryptocurrency investments">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Crypelete || Doorway To Success</title>
+</head>
+<body>
+    <form action="/edit-account/<%=user._id%>" class="actionForm" method="post">
+        <div class="top">
+            <img src="../images/logo.png" alt="logo">
+            <div class="message">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <p><%=message%></p>
+            </div>
+        </div>
+        <main>
+            <div class="input">
+                <label for="FName">First Name</label>
+                <input type="hidden" name="id" value="<%=user._id%>">
+                <input type="text" name="FName" id="FName" placeholder="First Name" value="<%=user.firstName%>" required>
+            </div>
+            <div class="input">
+                <label for="LName">Last Name</label>
+                <input type="text" name="LName" id="LName" placeholder="Last Name" value="<%=user.lastName%>" required>
+            </div>
+            <div class="input">
+                <label for="userName">User Name</label>
+                <input type="text" name="userName" id="userName" placeholder="User Name" value="<%=user.userName%>" required>
+            </div>
+            <div class="input">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" value="<%=user.email%>" required>
+            </div>
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" value="<%=user.password%>" required>
+            </div>
+            <button type="submit">Submit Changes</button>
+        </main>
+    </form>
+</body>
+</html>

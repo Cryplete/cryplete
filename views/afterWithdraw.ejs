@@ -1,0 +1,36 @@
+<%-include('partials/dashNav')-%>
+<div class="payments">
+    <div class="payments-top">
+        <h2>Your Withdrawal Has Been Confirmed</h2>
+        <p>Withdrawal to <b><%=wallet%></b> is pending</p>
+    </div>
+    <div class="buttons">
+        <a href="/dashboard/<%=userDetails._id%>">Close</a>
+    </div>
+
+    <div class="detail popUp">
+        <h3>Logout</h3>
+        <p>Are you want to logout?</p>
+        <div class="buttons">
+            <a href="#" id="cancel">Cancel</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.payments');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>

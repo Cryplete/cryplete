@@ -1,0 +1,20 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(activePlans.length == 0) { %>
+        <h2>😥 No Active Plans Yet</h2>
+    <% } else { %>
+        <h2 style="text-align: center;">
+        All Active Plans</h2>
+        <ol>
+            <% activePlans.forEach(active => { %>
+                <li>
+                    <a href="/admin-active/<%=active._id%>" class="userLink">
+                        <p style="margin-right: 4rem;"><%=active.plan%></p>
+                        <p><%=active.startDate%></p>
+                    </a>
+                </li>
+            <% }); %>
+        </ol>
+    <% } %>
+</div>
+<%-include('partials/dashFooter')-%>

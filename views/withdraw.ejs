@@ -1,0 +1,57 @@
+<%-include('partials/dashNav')-%>
+<div class="plan withdraw">
+
+    <a href="/withdrawal/<%=userDetails._id%>">Withdrawal History</a>
+    <form action="/withdraw/<%=userDetails._id%>" style="display: flex; margin-top: 7rem;" method="post" class="form primaryForm">
+        <div class="form-head">
+            <h3><%=message%></h3>
+            <a href="/dashboard/<%=userDetails._id%>" class="closePrimary">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+        <div class="form-body">
+            <label for="Amount">Enter Amount:</label>
+            <div class="input">
+                <input type="number" name="amount" id="amount" placeholder="0.00" required>
+                <p>USD</p>
+            </div>
+            <label for="network">Choose Deposit Network</label>
+            <select name="network" required>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="TRC 20">USDT (TRC 20)</option>
+            </select>
+        </div>
+        <div class="form-footer">
+            <a href="/dashboard/<%=userDetails._id%>" class="closePrimary">Cancel</a>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+
+    <div class="detail popUp">
+        <h3>Logout</h3>
+        <p>Are you want to logout?</p>
+        <div class="buttons">
+            <a href="#" id="cancel">Cancel</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.plan');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+
+<%-include('partials/dashFooter')-%>

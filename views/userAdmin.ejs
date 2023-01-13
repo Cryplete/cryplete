@@ -1,0 +1,20 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(users.length == 0) { %>
+        <h2>😥 We Have No Registered User Yet</h2>
+        <% } else { %>
+            <h2 style="text-align: center;">List Of Registered Users</h2>
+            <ol>
+                <% users.forEach(user => { %>
+                    <li>
+                        <a class="userLink" href="/admin/<%=user._id%>">
+                            <p><%=user.userName%></p>
+                            <p><%=user.email%></p>
+                        </a>
+                    </li>
+                <% }); %>
+            </ol>
+    <% } %>
+</div>
+<%-include('partials/dashFooter')-%>
+

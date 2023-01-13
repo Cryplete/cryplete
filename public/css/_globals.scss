@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: $white;
+    background: $black;
+    .body {
+        position: relative;
+        overflow: hidden;
+    }
+    &.burger {
+        .body {
+            height: 100vh;
+        }
+        .mobileMenu {
+            width: 90%;
+            opacity: 1;
+            padding: 20px 25px;
+            a {display: block;}
+        }
+        .hamburger {
+            padding: 12px 6px 12px 12px;
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+            >span:nth-child(2) {
+                opacity: 0;
+            }
+            >span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+        .landing, .faqs, .about {opacity: .6;}
+    }
+}
+
+.logo { img{ height: 7rem; } }

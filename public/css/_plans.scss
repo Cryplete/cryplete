@@ -1,0 +1,196 @@
+.plans, .plans_head, .outro, .plan_body, .plan_head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.plans {
+    a {
+        text-decoration: none;
+        padding: 15px 20px;
+        font-weight: 800;
+        border-radius: 7px;
+        border: 1px solid $mainGreen;
+        color: $white;
+        background: $mainGreen;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            color: $mainGreen;
+            background: transparent;
+        }
+    }
+}
+
+.plan {
+    margin: 20px 0px;
+    width: 100%;
+    &_head {
+        padding: 10px;
+        color: $white;
+        background: $mainGreen;
+        h4, h3 {margin: 0px;}
+        .block, .bottom {
+            display: flex;
+            align-items: center;
+        }
+        .block {
+            flex-direction: column;
+        }
+        .bottom {
+            justify-content: space-between;
+            width: 70%;
+        }
+    }
+    &_body {
+        padding: 20px 0px;
+        .detail {
+            width: 80%;
+            padding: 20px 15px;
+            border-bottom: 1px solid $DarkGrayishViolet;
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            p {margin: 0;}
+            i {color: $mainGreen; margin-right: 20px;}
+        }
+        a {margin-top: 10px;}
+    }
+}
+
+.deposit {
+    .form {
+        display: none;
+        position: fixed;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.withdraw {
+    .form {
+        width: 100%;
+        display: flex;
+    }
+}
+
+.depositForm {
+    select {
+        display: block;
+        background: transparent;
+        outline: 0px;
+        color: #000;
+        font-family: 'Lato', sans-serif;
+        &:focus {
+            border-color: $white;
+            outline: 0px;
+            background: $mainGreen;
+            color: $white
+        }
+    }
+}
+.withdraw .form, .deposit .form, .withdrawConfirm{
+    select {
+        display: block;
+        background: transparent;
+        outline: 0px;
+        color: $white;
+        font-family: 'Lato', sans-serif;
+        &:focus {
+            border-color: $white;
+            outline: 0px;
+            background: $mainGreen;
+        }
+    }
+    .input {
+        border: 1px solid $mainGreen;
+        width: 100%;
+        align-items: stretch;
+        margin-top: 10px;
+        input {
+            font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 0px;
+            padding: 20px;
+            width: 100%;
+            background: transparent;
+            outline: 0px;
+            color: $white;
+            font-size: 20px;
+        }
+    }
+}
+
+
+.deposit, .withdraw {
+    padding: 0px 25px;
+    position: relative;
+    &.primary {
+        .primaryForm {display: flex;}
+    }
+    &.secondary {
+        .secondaryForm {display: flex;}
+    }
+    &.diamond {
+        .diamondForm {display: flex;}
+    }
+    &.premium {
+        .premiumForm {display: flex; box-shadow: 1px 1px 13px 2px $mainGreen;}
+    }
+    .popUp {padding: 20px;}
+    .popUp, .form {
+        border-radius: 7px;
+        z-index: 2;
+    }
+    .form {
+        flex-direction: column;
+        align-items: center;
+        background: $VeryDarkViolet;
+        .input {
+            input {width: 85%;}
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0px;
+                padding: 20px;
+                background: $mainGreen;
+            }
+        }
+        &-head, &-body, &-footer {
+            padding: 25px;
+            width: 100%;
+        }
+        &-head, &-body {border-bottom: 1px solid #e9e7e7;}
+        &-head, &-footer, .input {
+            display: flex;
+        }
+        &-head {
+            justify-content: space-between;
+            align-items: center;
+            a {
+                background: transparent;
+                padding: 0px;
+            }
+        }
+        &-footer {
+            justify-content: space-between;
+            align-items: stretch;
+            a {background: #ff0000;}
+        }
+    }
+    a, button {
+        font-family: 'Lato', 'Courier New', Courier, monospace;
+        border: 0px;
+        outline: 0px;
+        text-decoration: none;
+        color: $white;
+        padding: 10px 15px;
+        border-radius: 7px;
+        background: $mainGreen;
+    }
+}
+
+.heavy {
+    box-shadow: 1px 1px 13px 2px $mainGreen;
+}

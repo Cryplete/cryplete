@@ -1,0 +1,19 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(items.length == 0) { %>
+        <h2>😥 No Deposit made yet</h2>
+        <% } else { %>
+        <h2 style="text-align: center;">Valid Deposits</h2>
+        <ol>
+            <% items.forEach(item => { %>
+                <li>
+                    <a href="/admin-plan/<%=item._id%>" class="userLink">
+                        <p><%=item.plan%></p>
+                        <p><%=item.amount%></p>
+                    </a>
+                </li>
+                <% }) %>
+        </ol>
+        <% } %>
+</div>
+<%-include('partials/dashFooter')-%>

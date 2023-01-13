@@ -1,0 +1,41 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(active.length == 0) { %>
+        <h2>🌚🌚 Nothing To See Here... <a href="/">Head back home</a></h2>
+    <% } else { %>
+        <div class="user">
+            <h2>Active Plan Details:</h2>
+            <div class="detail"><p>Plan: </p><h3><%=active.plan%></h3></div>
+            <div class="detail"><p>Amount: </p><h3>$<%=active.amount%></h3></div>
+            <div class="detail"><p>Network: </p><h3><%=active.network%></h3></div>
+            <div class="detail"><p>User: </p> <a href='/admin/<%=user._id%>'><%=user.email%></a></div>
+            <div class="detail"><p style="margin-right: 5rem;">Start Date: </p><h3><%=active.startDate%></h3></div>
+            <div class="detail"><p style="margin-right: 5rem;">Expected End Date: </p><h3><%=active.endDate%></h3></div>
+            <div class="detail buttons" style="justify-content: center;">
+                <a href="#" id="delete"><i class="fa fa-trash"></i></a>
+            </div>
+            <form action="/delete-active" method="post" class="detail popUp">
+                <input type="hidden" name="id" value="<%=active._id%>">
+                <h3>Delete <%=user.email%>'s active plan?</h3>
+                <p>Are you sure about this?</p>
+                <div class="buttons">
+                    <a href="#" id="cancel">Cancel</a>
+                    <button type="submit">Yes</button>
+                </div>
+            </form>
+        </div>
+    <% } %>
+</div>
+<script>
+    const deleteBtn = document.querySelector('#delete');
+    const cancelBtn = document.querySelector('#cancel');
+    const user = document.querySelector('.user');
+    deleteBtn.addEventListener('click', ()=> {
+        user.classList.add('pop');
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        user.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>

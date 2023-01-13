@@ -1,0 +1,59 @@
+<%-include('partials/dashNav')-%>
+<div class="userAdmin">
+    <% if(withItems.length == 0) { %>
+        <h2>You've Not Made Any Withdrawals Yet. Head Over Here <a href="/withdraw/<%=userDetails._id%>">To Withdrawal</a></h2>
+    <% } else { %>
+        <div class="user" style="    display: flex;
+        flex-direction: column;
+        align-items: center;">
+            <h2>All Withdrawals:</h2>
+            <ol>
+                <% withItems.forEach(item=> { %>
+                    <li style="margin-top: 7rem;">
+                        <div class="detail">
+                            <p>Amount:</p> <h3>$<%=item.amount%></h3>
+                        </div>
+
+                        <div class="detail">
+                            <p>Deposit Wallet:</p> <h3><%=item.wallet%></h3>
+                        </div>
+
+                        <div class="detail">
+                            <p>Deposit Network:</p> <h3><%=item.network%></h3>
+                        </div>
+
+                        <div class="detail">
+                            <p>Status:</p> <h3><%=item.status%></h3>
+                        </div>
+                    </li>
+                <% }); %>
+            </ol>
+
+            <div class="detail popUp">
+                <h3>Logout</h3>
+                <p>Are you want to logout?</p>
+                <div class="buttons">
+                    <a href="#" id="cancel">Cancel</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <% } %>
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.user');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>

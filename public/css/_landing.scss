@@ -1,0 +1,298 @@
+
+
+.landing, .kyc {
+    .onboard, .detail {
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 0px 1px #fb9120;
+        border-radius: 7px;  
+        transition: all 300ms ease-in-out;  
+        &:hover {
+            box-shadow: 1px 1px 13px 2px #fb9120;
+            img {width: 33%;}
+        }  
+    }
+}
+
+.landing {
+    &_top {
+        padding: 0px 25px 30px;
+        background-image: url('../images/cool-background.png');
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        img {width: 100%;}
+        .texts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2 {
+                color: $white;
+                span {color: $mainGreen;}
+            }
+            p {
+                color: $DarkGrayishViolet;
+            }
+        }
+    }
+
+    &_mid, &_uses, &_more, &_detail, &_sub, &_faqs, .container {
+        padding: 20px 25px;
+        box-shadow: 0px 0px 8px 2px #fb9120;
+    }
+
+    &_mid, &_mid .top, &_uses, &_uses .uses, &_uses .uses .uses_top, &_more, &_more .intro, &_detail, &_detail .intro, &_sub, &_faqs, &_faqs section &_faqs .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .onboard {      
+        img { width: 30%; margin-bottom: 10px; transition: all 300ms ease-in-out;}
+    }
+
+    &_mid, &_more {
+        section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 20px;
+        }
+    }
+
+    &_uses {
+        img {width: 45%; margin-bottom: 10px;}
+        p {color: $DarkGrayishViolet;}
+        .uses {
+            &_top {h4 {color: $mainGreen;}}
+            &_bottom {
+                .use {
+                    display: grid;
+                    grid-template-columns: 20% 70%;
+                    grid-column-gap: 20px;
+                    margin: 20px 0px;
+                    img {width: 100%;}
+                }
+            }
+        }
+    }
+
+    &_more {
+        .intro {
+            .green {color: $mainGreen; text-align: center;}
+            p {color: $DarkGrayishViolet;}
+        }
+        .onboard {
+            a {
+                text-decoration: none;
+                color: $mainGreen;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &_detail {
+        .intro {
+            h2 {color: $mainGreen;}
+            p {color: $DarkGrayishViolet;}
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+
+            .detail {
+                i {
+                    color: $mainGreen;
+                    font-size: 3rem;
+                }
+                h3 {color: $white;}
+                p {color: $DarkGrayishViolet;}
+            }
+        }
+    }
+    &_sub {
+        padding: 20px 25px 8rem;
+        h4 {color: $mainGreen;}
+        p {color: $DarkGrayishViolet;}
+        a {
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 800;
+            border-radius: 7px;
+            border: 1px solid $mainGreen;
+            color: $white;
+            background: $mainGreen;
+            transition: all 300ms ease-in-out;
+            &:not(:last-child) {margin-bottom: 1.5rem;}
+            &:hover {
+                color: $mainGreen;
+                background: transparent;
+            }
+        }
+    }
+
+    &_faqs {
+        .question {
+            border: 1px solid $DarkGrayishViolet;
+            padding: 10px 15px 20px;
+            &.more {
+                p {
+                    height: 100%;
+                    opacity: 1;
+                    color: $DarkGrayishViolet;
+                }
+                i {
+                    color: $mainGreen;
+                    transform: rotate(180deg);
+                }
+            }
+            header {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3 {color: $mainGreen;}
+                i {transition: all 500ms ease-in-out;}
+            }
+            p {
+                opacity: 0;
+                height: 0px;
+                transition: all 500ms ease-in-out;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+.save, .payments, .save-top, .payments-top, .payments-body, .save-body, .save-body .detail, .save .buttons, .payments .buttons, .details .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.save, .payments, .save-top, .payments-top, .save-body, .payments-body {flex-direction: column;}
+.save .buttons, .save-top, .save-body, .payments .buttons, .payments-top, .payments-body {padding: 20px 25px;}
+.save-top, .save-body, .payments-top, .payments-body {
+    border-bottom: 1px solid rgb(245, 245, 245);
+}
+.save, .payments {
+    background: $VeryDarkViolet;
+    &-body .detail, .buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    &-body, &-top {width: 100%;}
+    button, a {
+        font-family: 'Lato', sans-serif;
+        font-weight: 800;
+        border: 0px;
+        outline: 0px;
+        padding: 20px;
+        border-radius: 7px;
+        background: $mainGreen;
+        color: #fff;
+    }
+    a {
+        background: transparent;
+        color: $mainGreen;
+        border: 1px solid $mainGreen;
+        text-decoration: none
+    }
+}
+.payments{
+    .buttons {justify-content: center;}
+    img {width: 20%; margin: 20px 0px; border-radius: 10px;}
+    .input {
+        display: flex;
+        align-items: stretch;
+        input {
+            background: transparent;
+            width: 85%;
+            color: #fff;
+            border: 1px solid $mainGreen;
+            outline: 0px;
+            font-family: 'Lato', sans-serif;
+            padding: 10px 15px;
+            font-size: larger;
+        }
+        a {
+            background: $mainGreen;
+            color: #fff;
+            border-radius: 0px;
+        }
+    }
+}
+
+/// Card Container ///
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/// Cards ///
+cards {
+    width: 90%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btc,
+.cosmos,
+.ethereum {
+    display: grid;
+    max-width: 300px;
+    min-width: 250px;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, 60px) 1fr;
+    grid-template: 
+        "info"
+        "chart";
+    border-radius: 30px;
+}
+
+.btc {
+    box-shadow: 10px 10px 20px 1px rgba(247,147,26,.15);
+}
+
+.cosmos {
+    box-shadow: 10px 10px 20px 1px rgba(46,49,72,.15);
+}
+
+.ethereum {
+    box-shadow: 10px 10px 20px 1px rgba(78,56,216,.15);
+}
+
+.asset-info {
+    grid-area: info;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5% 0 5%;
+}
+
+.title {
+    display: inline-flex;
+}
+
+card h1 {
+    margin-left: 10px;
+}
+
+
+/// Charts ///
+#btcChart,
+#cosmosChart,
+#ethereumChart {
+    grid-area: chart;
+    border-radius: 0px 0px 30px 30px;
+    margin-top: auto;
+}

@@ -1,0 +1,137 @@
+<%-include('partials/dashNav')-%>
+
+<div class="dashboard">
+    <h2 class="head">Hello Today, <%=userDetails.userName%></h2>
+    <section class="stats">
+        <a class="stats-section" style="color: #fff; text-decoration: none;">
+            <h3><%=userDetails.completed%></h3>
+            <h5>Completed Plans</h5>
+        </a>
+        <a href="/plans/<%=userDetails._id%>" class="stats-section" style="color: #fff; text-decoration: none;">
+            <h3><%=active%></h3>
+            <h5>Active Plans</h5>
+        </a>
+        <a href="/failed/<%=userDetails._id%>" class="stats-section" style="color: #fff; text-decoration: none;">
+            <h3><%=failed%></h3>
+            <h5>Failed Transactions</h5>
+        </a>
+    </section>
+
+    <section class="more">
+        <div class="top">
+            <h5>Referral Link</h5>
+            <div class="top-link">
+                <input type="text" name="referalLink" value="https://crypeleteinvestment.ltd/register/<%=userDetails._id%>" readonly id="referalLink">
+                <a href="#" id="copyReferal">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="more-tab">
+            <div class="texts">
+                <h5>KYC Verification</h5>
+                <%if(userDetails.kycVerified) {%>
+                    <h3>Verified</h3>
+                <%} else {%>
+                    <h3>Unverified</h3>
+                <%}%>
+            </div>
+            <div class="svg">
+                <%if(userDetails.kycVerified) {%>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                <%} else {%>
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                <%}%>
+            </div>
+        </div>
+
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Amount Invested</h5>
+                <h3>$<%=userDetails.invested%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-dollar"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Profit Available</h5>
+                <h3>$<%=userDetails.profit%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-money"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Total Withdrawn Amount</h5>
+                <h3>$<%=userDetails.withdrawal%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-send"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Unsettled Balance</h5>
+                <h3>$<%=userDetails.unsettledBalance%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Referral Bonus Amount</h5>
+                <h3>$<%=userDetails.referalBonus%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-link"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Transaction Id</h5>
+                <h3><%=userDetails._id%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-id-card"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="detail popUp">
+        <h3>Logout</h3>
+        <p>Are you want to logout?</p>
+        <div class="buttons">
+            <a href="#" id="cancel">Cancel</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.dashboard');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+
+<%-include('partials/dashFooter')-%>

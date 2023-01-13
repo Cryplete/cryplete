@@ -1,0 +1,70 @@
+<%-include('partials/adminNav')-%>
+<div class="dashboard">
+    <section class="stats">
+        <div class="stats-section">
+            <h3><%=pending%></h3>
+            <h5>Pending Withdrawals</h5>
+        </div>
+        <div class="stats-section">
+            <h3><%=active%></h3>
+            <h5>Active Plans</h5>
+        </div>
+        <div class="stats-section">
+            <h3><%=users%></h3>
+            <h5>Active Users</h5>
+        </div>
+    </section>
+
+    <section class="more">
+        <div class="top">
+            <h5>Web Address</h5>
+            <div class="top-link">
+                <input type="text" name="referalLink" value="https://crypeleteinvestment.ltd" readonly id="referalLink">
+                <a href="#" id="copyReferal">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Active Users</h5>
+                <h3><%=users%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-users"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Active Plans</h5>
+                <h3><%=active%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-feed"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Pending Withdrawals</h5>
+                <h3><%=pending%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-exchange"></i>
+            </div>
+        </div>
+
+        <div class="more-tab">
+            <div class="texts">
+                <h5>Deposits</h5>
+                <h3><%=deposit%></h3>
+            </div>
+            <div class="svg">
+                <i class="fa fa-exchange"></i>
+            </div>
+        </div>
+    </section>
+</div>
+<%-include('partials/dashFooter')-%>

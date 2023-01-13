@@ -1,0 +1,53 @@
+<%-include('partials/adminNav')-%>
+<div class="userAdmin">
+    <% if(user.length == 0) { %>
+        <h2>🌚🌚 Nothing To See Here... <a href="/">Head back home</a></h2>
+        <% } else { %>
+            <div class="user">
+                <h2>User Details</h2>
+            <div class="detail"><p>Referral Link:</p> <h3>https://crypeleteinvestment.ltd/register/<%=user._id%></h3></div>
+            <div class="detail"><p>First Name:</p> <h3><%=user.firstName%></h3></div>
+            <div class="detail"><p>Last Name:</p> <h3><%=user.lastName%></h3></div>
+            <div class="detail"><p>User Name:</p> <h3><%=user.userName%></h3></div>
+            <div class="detail"><p>Email:</p> <h3><%=user.email%></h3></div>
+            <div class="detail"><p>Password:</p> <h3><%=user.password%></h3></div>
+            <div class="detail"><p>Referrred By:</p> <a href='/admin/<%=referrer._id%>'><%=referrer.email%></a></div>
+            <div class="detail"><p>Completed Plans:</p> <h3><%=user.completed%></h3></div>
+            <div class="detail"><p>Failed Transactions:</p> <h3><%=user.failed%></h3></div>
+            <div class="detail"><p>Amount Invested:</p> <h3>$<%=user.invested%></h3></div>
+            <div class="detail"><p>Available Profit:</p> <h3>$<%=user.profit%></h3></div>
+            <div class="detail"><p>Total Deposits:</p> <h3><%=deposit%></h3></div>
+            <div class="detail"><p>Total Withdrawn Amount:</p> <h3>$<%=user.withdrawal%></h3></div>
+            <div class="detail"><p>Unsettled Balance:</p> <h3>$<%=user.unsettledBalance%></h3></div>
+            <div class="detail"><p>Referral Bonus Amount:</p> <h3>$<%=user.referalBonus%></h3></div>
+            <div class="detail"><p>KYC Verified?:</p> <h3><%=user.kycVerified%></h3></div>
+            <div class="detail"><p>Suspended?:</p> <h3><%=!user.verified%></h3></div>
+            <div class="detail buttons">
+                <a href="/edit-user/<%=user._id%>"><i class="fa fa-pencil-square-o"></i></a>
+                <a id="delete" href="#"><i class="fa fa-trash"></i></a>
+            </div>
+            <form action="/delete-user" method="post" class="detail popUp">
+                <input type="hidden" name="id" value="<%=user._id%>">
+                <h3>Delete <%=user.email%>'s Account?</h3>
+                <p>Are you sure about this?</p>
+                <div class="buttons">
+                    <a href="#" id="cancel">Cancel</a>
+                    <button type="submit">Yes</button>
+                </div>
+            </form>
+            </div>
+        <% } %>
+</div>
+<script>
+    const deleteBtn = document.querySelector('#delete');
+    const cancelBtn = document.querySelector('#cancel');
+    const user = document.querySelector('.user');
+    deleteBtn.addEventListener('click', ()=> {
+        user.classList.add('pop');
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        user.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>

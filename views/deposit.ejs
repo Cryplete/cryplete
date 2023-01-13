@@ -1,0 +1,297 @@
+<%-include('partials/dashNav')-%>
+<div class="plan deposit <%=extra%>">
+    <a href="/deposit-history/<%=userDetails._id%>">Deposit History</a>
+    <form action="/deposit/bronze/<%=userDetails._id%>" method="post" class="form primaryForm">
+        <div class="form-head">
+            <h3>Bronze Plan || <%=message%></h3>
+            <a href="#" class="closePrimary">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+        <div class="form-body">
+            <label for="Amount">Enter Amount:</label>
+            <div class="input">
+                <input type="number" name="amount" id="amount" placeholder="0.00" required>
+                <p>USD</p>
+            </div>
+            <label for="network">Choose Deposit Network</label>
+            <select name="network" required>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="TRC 20">USDT (TRC 20)</option>
+            </select>
+        </div>
+        <div class="form-footer">
+            <a href="#" class="closePrimary">Close</a>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+
+    <form action="/deposit/silver/<%=userDetails._id%>" method="post" class="form secondaryForm">
+        <div class="form-head">
+            <h3>Silver Plan || <%=message%></h3>
+            <a href="#" class="closeSecondary">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+        <div class="form-body">
+            <label for="Amount">Enter Amount:</label>
+            <div class="input">
+                <input type="number" name="amount" id="amount" placeholder="0.00" required>
+                <p>USD</p>
+            </div>
+            <label for="network">Choose Deposit Network</label>
+            <select name="network" required>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="TRC 20">USDT (TRC 20)</option>
+            </select>
+        </div>
+        <div class="form-footer">
+            <a href="#" class="closeSecondary">Close</a>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+
+    <form action="/deposit/diamond/<%=userDetails._id%>" method="post" class="form diamondForm">
+        <div class="form-head">
+            <h3>Diamond Plan || <%=message%></h3>
+            <a href="#" class="closePremium">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+        <div class="form-body">
+            <label for="Amount">Enter Amount:</label>
+            <div class="input">
+                <input type="number" name="amount" id="amount" placeholder="0.00" required>
+                <p>USD</p>
+            </div>
+            <label for="network">Choose Deposit Network</label>
+            <select name="network" required>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="TRC 20">USDT (TRC 20)</option>
+            </select>
+        </div>
+        <div class="form-footer">
+            <a href="#" class="closeDiamond">Close</a>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+
+    <form action="/deposit/platinum/<%=userDetails._id%>" method="post" class="form premiumForm">
+        <div class="form-head">
+            <h3>Platinum Plan || <%=message%></h3>
+            <a href="#" class="closePremium">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+        <div class="form-body">
+            <label for="Amount">Enter Amount:</label>
+            <div class="input">
+                <input type="number" name="amount" id="amount" placeholder="0.00" required>
+                <p>USD</p>
+            </div>
+            <label for="network">Choose Deposit Network</label>
+            <select name="network" required>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="TRC 20">USDT (TRC 20)</option>
+            </select>
+        </div>
+        <div class="form-footer">
+            <a href="#" class="closePremium">Close</a>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+
+    <div class="plans_head">
+        <h2 data-aos="fade-left" data-aos-duration="1500">Our Investment Plans</h2>
+        <p data-aos="fade-right" data-aos-duration="1500">Explore our well tailored and premium Investment offers for various budgets and expertise levels, guaranteed to get you started on your investment journey.</p>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1500" class="plan">
+        <div class="plan_head">
+            <div class="top block"><h4>BRONZE</h4>
+                <p>Enjoy entry level of investments and earn money</p></div>
+                <div class="bottom">
+                    <div class="block">
+                        <h3>5.0%</h3>
+                        <p>Weekly Interest</p>
+                    </div>
+                    <div class="block">
+                        <h3>7</h3>
+                        <p>Days</p>
+                    </div>
+                </div>
+        </div>
+        <div class="plan_body">
+            <div class="detail"><p>Min Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$500.00</p></div>
+            <div class="detail"><p>Max Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$4,999.00</p></div>
+            <div class="detail"><p>Renewable</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">Yes</p></div>
+            <div class="detail"><p>Referral Bonus</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">10%</p></div>
+            <a href="#" id="selectPrimary">SELECT PLAN</a>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1500" class="plan">
+        <div class="plan_head">
+            <div class="top block"><h4>SILVER</h4>
+                <p>Enjoy entry level of investments and earn money</p></div>
+                <div class="bottom">
+                    <div class="block">
+                        <h3>6.5%</h3>
+                        <p>Weekly Interest</p>
+                    </div>
+                    <div class="block">
+                        <h3>7</h3>
+                        <p>Days</p>
+                    </div>
+                </div>
+        </div>
+        <div class="plan_body">
+            <div class="detail"><p>Min Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$5,000.00</p></div>
+            <div class="detail"><p>Max Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$19,999.00</p></div>
+            <div class="detail"><p>Renewable</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">Yes</p></div>
+            <div class="detail"><p>Referral Bonus</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">10%</p></div>
+            <a href="#" id="selectSecondary">SELECT PLAN</a>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1500" class="plan">
+        <div class="plan_head">
+            <div class="top block"><h4>DIAMOND</h4>
+                <p>Enjoy entry level of investments and earn money</p></div>
+                <div class="bottom">
+                    <div class="block">
+                        <h3>7.5%</h3>
+                        <p>Weekly Interest</p>
+                    </div>
+                    <div class="block">
+                        <h3>7</h3>
+                        <p>Days</p>
+                    </div>
+                </div>
+        </div>
+        <div class="plan_body">
+            <div class="detail"><p>Min Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$20,000.00</p></div>
+            <div class="detail"><p>Max Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$49,999.00</p></div>
+            <div class="detail"><p>Renewable</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">Yes</p></div>
+            <div class="detail"><p>Referral Bonus</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">10%</p></div>
+            <a href="#" id="selectDiamond">SELECT PLAN</a>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1500" class="plan heavy">
+        <div class="plan_head">
+            <div class="top block"><h4>PLATINUM</h4>
+                <p>Enjoy entry level of investments and earn money</p></div>
+                <div class="bottom">
+                    <div class="block">
+                        <h3>10.0%</h3>
+                        <p>Weekly Interest</p>
+                    </div>
+                    <div class="block">
+                        <h3>7</h3>
+                        <p>Days</p>
+                    </div>
+                </div>
+        </div>
+        <div class="plan_body">
+            <div class="detail"><p>Min Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$50,000.00</p></div>
+            <div class="detail"><p>Max Deposit</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">$1,000,000,000.00</p></div>
+            <div class="detail"><p>Renewable</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">Yes</p></div>
+            <div class="detail"><p>Referral Bonus</p> <p style="justify-self: center;">-</p> <p style="justify-self: end;">10%</p></div>
+            <a href="#" id="selectPremium">SELECT PLAN</a>
+        </div>
+    </div>
+    <div class="detail popUp">
+        <h3>Logout</h3>
+        <p>Are you want to logout?</p>
+        <div class="buttons">
+            <a href="#" id="cancel">Cancel</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.deposit');
+    const cancelBtn = document.querySelector('#cancel');
+    const selectPrimary = document.querySelector('#selectPrimary');
+    const selectSecondary = document.querySelector('#selectSecondary');
+    const selectDiamond = document.querySelector('#selectDiamond');
+    const selectPremium = document.querySelector('#selectPremium');
+    const closePrimary = document.querySelectorAll('.closePrimary');
+    const closeSecondary = document.querySelectorAll('.closeSecondary');
+    const closeDiamond = document.querySelectorAll('.closeDiamond');
+    const closePremium = document.querySelectorAll('.closePremium');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+            dashboard.classList.remove('primary');
+            dashboard.classList.remove('secondary');
+
+        });
+    });
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+    selectPrimary.addEventListener('click', ()=> {
+        dashboard.classList.add('primary');
+        body.classList.remove('burger');
+        dashboard.classList.remove('pop');
+        dashboard.classList.remove('diamond');
+        dashboard.classList.remove('secondary');
+    });
+
+    selectSecondary.addEventListener('click', ()=> {
+        dashboard.classList.add('secondary');
+        dashboard.classList.remove('primary');
+        dashboard.classList.remove('diamond');
+        body.classList.remove('burger');
+        dashboard.classList.remove('pop');
+    });
+
+    selectDiamond.addEventListener('click', ()=> {
+        dashboard.classList.add('diamond');
+        dashboard.classList.remove('secondary');
+        dashboard.classList.remove('primary');
+        body.classList.remove('burger');
+        dashboard.classList.remove('pop');
+    });
+
+    selectPremium.addEventListener('click', ()=> {
+        dashboard.classList.add('premium');
+        dashboard.classList.remove('secondary');
+        dashboard.classList.remove('primary');
+        body.classList.remove('burger');
+        dashboard.classList.remove('pop');
+    });
+
+    closePrimary.forEach(closeBtn=> {
+        closeBtn.addEventListener('click', ()=> {
+            dashboard.classList.remove('primary');
+        });
+    });
+
+    closeSecondary.forEach(closeBtn=> {
+        closeBtn.addEventListener('click', ()=> {
+            dashboard.classList.remove('secondary');
+        });
+    });
+
+    closeDiamond.forEach(closeBtn=> {
+        closeBtn.addEventListener('click', ()=> {
+            dashboard.classList.remove('diamond');
+        });
+    });
+
+    closePremium.forEach(closeBtn=> {
+        closeBtn.addEventListener('click', ()=> {
+            dashboard.classList.remove('premium');
+        });
+    });
+</script>
+<%-include('partials/dashFooter')-%>

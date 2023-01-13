@@ -1,0 +1,39 @@
+<%-include('partials/dashNav')-%>
+<div class="userAdmin">
+    <% if(active.length == 0) { %>
+        <h2>🌚🌚 Nothing To See Here... <a href="/">Head back home</a></h2>
+    <% } else { %>
+        <div class="user">
+            <h2>Transaction Details:</h2>
+            <div class="detail"><p>Plan: </p><h3><%=active.plan%></h3></div>
+            <div class="detail"><p>Amount: </p><h3>$<%=active.amount%></h3></div>
+            <div class="detail"><p>Network: </p><h3><%=active.network%></h3></div>
+            <div class="detail"><p>Status: </p><h3><%=active.status%></h3></div>
+            <div class="detail popUp">
+                <h3>Logout</h3>
+                <p>Are you want to logout?</p>
+                <div class="buttons">
+                    <a href="#" id="cancel">Cancel</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <% } %>
+
+<script>
+    const logoutBtns = document.querySelectorAll('.logout');
+    const dashboard = document.querySelector('.user');
+    const cancelBtn = document.querySelector('#cancel');
+    logoutBtns.forEach(logout=> {
+        logout.addEventListener('click', ()=> {
+            dashboard.classList.add('pop');
+            body.classList.remove('burger');
+        });
+    });
+
+    cancelBtn.addEventListener('click', ()=> {
+        dashboard.classList.remove('pop');
+    });
+</script>
+<%-include('partials/dashFooter')-%>
