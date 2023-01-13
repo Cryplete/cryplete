@@ -216,26 +216,16 @@ app.post('/register/:referId', (req, res)=> {
                 });
             } else {
                 //Try to create new user
-                const newUserDetails = new User({
+                const newUserDetails = {
                     firstName: FName,
                     lastName: LName,
                     userName: userName,
                     email: email,
                     password: password,
-                    referer: referer,
-                    completed: 0,
-                    failed: 0,
-                    invested: 0,
-                    profit: 0,
-                    withdrawal: 0,
-                    unsettledBalance: 0,
-                    referalBonus: 0,
-                    kycVerified: false,
-                    verified: true
-                });
-                newUserDetails.save();
-                res.redirect('/login');
-                
+                    referer: referer
+                }
+
+                sendOTPVerificationEmail(newUserDetails, res);
             }
         })
     }
@@ -283,7 +273,12 @@ const sendOTPVerificationEmail = async (newUserDetails, res) => {
                     verified: false
                 });
             if(err) {
-                newUser.save();
+                console.log(err);
+                res.render('signup', {
+                    message: 'Internal Server Error!... Try Again',
+                    prefix: "",
+                    refererId: newUserDetails.referer
+                });
             } else {
                 newUser.save();
                 newOTPVerification.save();
@@ -1364,23 +1359,16 @@ app.post('/withdraw/confirm/:amount/:userId/:network', (req, res)=> {
             });
         } else {
 
-            const withdrawal = new PendingWithdrawal({
+            const withdrawal = {
                 userId: userId,
                 amount: amount,
                 network: network,
                 wallet: wallet,
                 status: "Pending"
-            });
-    
-            //save active plan
-                    withdrawal.save();
-                    res.render('afterWithdraw', {
-                        prefix: "../../../../",
-                        date: date,
-                        userDetails: items,
-                        wallet: withdrawal.wallet
-                    });
-        } 
+            };
+
+            sendWithdrawalConfirmation(withdrawal, items, res);
+        }
     });
 });
 
