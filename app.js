@@ -234,13 +234,7 @@ app.post('/register/:referId', (req, res)=> {
                     verified: true
                 });
                 newUserDetails.save();
-                User.findOne({email: email}, (err, items)=> {
-                    if(err) {
-                        console.log(err)
-                    } else {
-                        res.redirect(`/dashboard/${items._id}`)
-                    }
-                });
+                res.redirect('/login');
                 
             }
         })
